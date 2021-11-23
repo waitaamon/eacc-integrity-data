@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\InstitutionResource\Pages;
+namespace App\Filament\Resources\NatureResource\Pages;
 
 use Illuminate\Database\Eloquent\Model;
 use Filament\Resources\Pages\CreateRecord;
-use App\Filament\Resources\InstitutionResource;
+use App\Filament\Resources\NatureResource;
 
-class CreateInstitution extends CreateRecord
+class CreateNature extends CreateRecord
 {
-    public static $resource = InstitutionResource::class;
+    public static $resource = NatureResource::class;
 
     protected function getRedirectUrl(Model $record): string
     {

@@ -14,26 +14,18 @@ class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable, IsFilamentUser, SendsFilamentPasswordResetNotification;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['name', 'email', 'password'];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
+    CONST ADMINS = [ 'mtile@integrity.go.ke', 'agathoka@integrity.go.ke'];
+
     public function isFilamentAdmin(): bool
     {
-        return in_array($this->email, [
-            'mtile@integrity.go.ke',
-            'agathoka@integrity.go.ke',
-        ]);
+        return in_array($this->email, User::ADMINS);
     }
 }

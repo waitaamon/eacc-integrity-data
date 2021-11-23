@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Filament\Resources\InstitutionResource\Pages;
+namespace App\Filament\Resources\NatureResource\Pages;
 
 use Illuminate\Database\Eloquent\Model;
 use Filament\Resources\Pages\EditRecord;
-use App\Filament\Resources\InstitutionResource;
+use App\Filament\Resources\NatureResource;
 
-class EditInstitution extends EditRecord
+class EditNature extends EditRecord
 {
-    public static $resource = InstitutionResource::class;
+    public static $resource = NatureResource::class;
 
     protected function getRedirectUrl(Model $record): string
     {
         return $this->getResource()::generateUrl('index');
     }
-
 }

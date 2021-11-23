@@ -14,13 +14,13 @@ use Filament\Resources\Tables\Table;
 
 class InstitutionResource extends Resource
 {
-    public static $icon = 'heroicon-o-collection';
+    public static $icon = 'heroicon-o-library';
 
     public static function form(Form $form)
     {
         return $form
             ->schema([
-                Components\TextInput::make('name')->autofocus()->required(),
+                Components\TextInput::make('name')->autofocus()->required()->unique('institutions', 'name', true),
                 Components\TextInput::make('email')->nullable(),
                 Components\TextInput::make('address')->label('Address')->nullable(),
                 Components\TextInput::make('phone')->label('Phone number')->nullable(),
