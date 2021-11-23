@@ -8,4 +8,7 @@ use Filament\Resources\Pages\ListRecords;
 class ListIntegrityData extends ListRecords
 {
     public static $resource = IntegrityDataResource::class;
+
+    public static $title = 'Integrity Data';
+
 }

@@ -10,6 +10,8 @@ class CreateNature extends CreateRecord
 {
     public static $resource = NatureResource::class;
 
+    public static $title = 'Create';
+
     protected function getRedirectUrl(Model $record): string
     {
         return $this->getResource()::generateUrl('index');

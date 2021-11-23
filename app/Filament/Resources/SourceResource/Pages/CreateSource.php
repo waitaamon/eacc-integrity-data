@@ -10,6 +10,8 @@ class CreateSource extends CreateRecord
 {
     public static $resource = SourceResource::class;
 
+    public static $title = 'Create';
+
     protected function getRedirectUrl(Model $record): string
     {
         return $this->getResource()::generateUrl('index');

@@ -8,4 +8,6 @@ use Filament\Resources\Pages\ListRecords;
 class ListNatures extends ListRecords
 {
     public static $resource = NatureResource::class;
+
+    public static $title = 'Nature of integrity issue';
 }

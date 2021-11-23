@@ -16,6 +16,8 @@ class InstitutionResource extends Resource
 {
     public static $icon = 'heroicon-o-library';
 
+    public static $title = 'Institutions';
+
     public static function form(Form $form)
     {
         return $form

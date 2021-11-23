@@ -8,4 +8,6 @@ use Filament\Resources\Pages\EditRecord;
 class EditIntegrityData extends EditRecord
 {
     public static $resource = IntegrityDataResource::class;
+
+    public static $title = 'Edit';
 }

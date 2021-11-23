@@ -21,6 +21,8 @@ class SourceResource extends Resource
 
     public static $label = 'source of information';
 
+    public static $title = 'Source of information';
+
     public static function form(Form $form)
     {
         return $form

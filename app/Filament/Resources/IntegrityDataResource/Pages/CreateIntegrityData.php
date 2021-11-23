@@ -8,4 +8,6 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateIntegrityData extends CreateRecord
 {
     public static $resource = IntegrityDataResource::class;
+
+    public static $title = 'Create';
 }

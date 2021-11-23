@@ -10,6 +10,8 @@ class EditNature extends EditRecord
 {
     public static $resource = NatureResource::class;
 
+    public static $title = 'Edit';
+
     protected function getRedirectUrl(Model $record): string
     {
         return $this->getResource()::generateUrl('index');

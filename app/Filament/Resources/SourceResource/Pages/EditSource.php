@@ -10,6 +10,8 @@ class EditSource extends EditRecord
 {
     public static $resource = SourceResource::class;
 
+    public static $title = 'Edit';
+
     protected function getRedirectUrl(Model $record): string
     {
         return $this->getResource()::generateUrl('index');
