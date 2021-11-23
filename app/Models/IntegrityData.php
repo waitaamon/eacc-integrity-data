@@ -10,13 +10,27 @@ class IntegrityData extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'id_number', 'institution_id', 'nature_id', 'description', 'category', 'source_id', 'date'];
+    protected $fillable = ['name', 'id_number', 'user_id', 'institution_id', 'nature_id', 'description', 'category', 'source_id', 'date'];
 
     protected $casts = [
         'date' => 'date'
     ];
 
     const OFFICER_CATEGORIES = ['public' => 'public officer', 'state' => 'state officer'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::creating(function (IntegrityData $data) {
+            $data->user_id = auth()->id();
+        });
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function institution(): BelongsTo
     {

@@ -24,8 +24,13 @@ class User extends Authenticatable implements FilamentUser
 
     CONST ADMINS = [ 'mtile@integrity.go.ke', 'agathoka@integrity.go.ke'];
 
-    public function isFilamentAdmin(): bool
+    public function getIsAdminAttribute(): bool
     {
         return in_array($this->email, User::ADMINS);
+    }
+
+    public function isFilamentAdmin(): bool
+    {
+        return $this->is_admin;
     }
 }

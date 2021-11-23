@@ -2,34 +2,35 @@
 
 namespace App\Policies;
 
+use App\Models\Source;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class SourcePolicy
 {
     use HandlesAuthorization;
 
     public function viewAny(User $user): bool
     {
-        return $user->is_admin;
+        return true;
     }
 
-    public function view(User $user, User $model)
+    public function view(User $user, Source $source): bool
     {
         return $user->is_admin;
     }
 
     public function create(User $user): bool
     {
-        return $user->is_admin;
+        return true;
     }
 
-    public function update(User $user, User $model): bool
+    public function update(User $user, Source $source): bool
     {
         return $user->is_admin;
     }
 
-    public function delete(User $user, User $model): bool
+    public function delete(User $user, Source $source): bool
     {
         return $user->is_admin;
     }

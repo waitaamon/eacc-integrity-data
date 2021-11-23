@@ -3,33 +3,34 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\Institution;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class InstitutionPolicy
 {
     use HandlesAuthorization;
 
     public function viewAny(User $user): bool
     {
-        return $user->is_admin;
+        return true;
     }
 
-    public function view(User $user, User $model)
+    public function view(User $user, Institution $institution): bool
     {
-        return $user->is_admin;
+        return true;
     }
 
     public function create(User $user): bool
     {
-        return $user->is_admin;
+        return true;
     }
 
-    public function update(User $user, User $model): bool
+    public function update(User $user, Institution $institution): bool
     {
         return $user->is_admin;
     }
 
-    public function delete(User $user, User $model): bool
+    public function delete(User $user, Institution $institution)
     {
         return $user->is_admin;
     }

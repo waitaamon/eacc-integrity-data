@@ -19,6 +19,7 @@ class CreateIntegrityDataTable extends Migration
             $table->string('id_number');
             $table->string('category');
             $table->text('description');
+            $table->foreignId('user_id')->constrained();
             $table->foreignId('institution_id')->constrained();
             $table->foreignId('nature_id')->constrained();
             $table->foreignId('source_id')->constrained();
